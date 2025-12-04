@@ -8,21 +8,19 @@ var isAnagram = function(s, t) {
     let m=t.length;
     if(n!=m) return false;
     let map=new Map();
-    for(i=0;i<n;i++){
-        let char=s[i];
+    for(let char of s){
         if(map.has(char)){
-            map.set(char,map.get(char)+1)
+            map.set(char,map.get(char)+1);
         }
         else{
             map.set(char,1);
         }
     }
-     for (let char of t) {
-        if (!map.has(char) || map.get(char) === 0) {
-            return false;
+    for(let newchar of t){
+        if(!map.has(newchar)||map.get(newchar)==0) return false;
+        else{
+            map.set(newchar,map.get(newchar)-1);
         }
-        map.set(char, map.get(char) - 1);
     }
-    return true
-
+    return true;
 };
