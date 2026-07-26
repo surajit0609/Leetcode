@@ -2,6 +2,8 @@ class Solution:
     def reverse(self, x: int) -> int:
         sign= -1 if x<0 else 1;
         num=abs(x);
+        if num<10:
+            return x
         revNum=0;
         while num>0:
             ld=num%10;
