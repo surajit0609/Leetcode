@@ -1,7 +1,11 @@
-class Solution:
-    def fib(self, n: int) -> int:
-        if n<=1:return n;
-        l=self.fib(n-1);
-        r=self.fib(n-2);
-        return l+r
+class Solution(object):
+    def fib(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        if n==1 or n==0:
+            return n;
+        return self.fib(n-1)+self.fib(n-2);
+            
         
